@@ -1,7 +1,9 @@
 <#import "template.ftl" as layout>
+<!-- ${msg("titleCustom")} -->
+ <img src="http://arkhamdevops.eastus.cloudapp.azure.com:3000/static/media/Arkham_Logo.0de5fca6da6a2b46d39f1ec8a120cc7a.svg" style="width: 40%" alt="Arkham_Logo">
+
 <@layout.registrationLayout displayInfo=social.displayInfo displayWide=(realm.password && social.providers??); section>
     <#if section = "header">
-        ${msg("doLogIn")}
     <#elseif section = "form">
         <div id="kc-form" <#if realm.password && social.providers??>class="${properties.kcContentWrapperClass!}"</#if>>
             <div id="kc-form-wrapper" <#if realm.password && social.providers??>class="${properties.kcFormSocialAccountContentClass!} ${properties.kcFormSocialAccountClass!}"</#if>>
@@ -122,7 +124,7 @@
                             <input tabindex="4" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
                         </div>
                         -->
-
+                            
                         <div class="mdc-card__action-icons">
                             <div class="mdc-card__action-buttons">
                                 <button tabindex="0" name="login" id="kc-login" type="submit" class="mdc-button mdc-button--raised mdc-card__action">
