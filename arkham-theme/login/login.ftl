@@ -1,7 +1,11 @@
 <#import "template.ftl" as layout>
 <!-- ${msg("titleCustom")} -->
- <img src="http://arkhamdevops.eastus.cloudapp.azure.com:3000/static/media/Arkham_Logo.b3636ca58652344fac784d3b46e57ccb.svg" style="width: 460px" alt="Arkham_Logo">
 
+<div>
+ <#--  <img src="http://arkhamdevops.eastus.cloudapp.azure.com:3000/static/media/Arkham_Logo_Black.86e5a5dc3890a0b5cc20e9ea0731b948.svg" style="width: 460px" alt="Arkham_Logo">  -->
+ <img src=${msg("logoLocation")} style="width: 460px" alt="Arkham_Logo">
+<br></br>
+</div>
 <@layout.registrationLayout displayInfo=social.displayInfo displayWide=(realm.password && social.providers??); section>
     <#if section = "header">
     <#elseif section = "form">
@@ -27,8 +31,8 @@
                             <div class="mdc-text-field mdc-text-field--with-leading-icon ${properties.kcLabelClass!} <#if usernameEditDisabled??>mdc-text-field--disabled</#if>">
                                 <i class="material-icons mdc-text-field__icon" role="button">person</i>
                                 <input tabindex="0" required id="username" class="mdc-text-field__input ${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" autofocus autocomplete="off" <#if usernameEditDisabled??>disabled</#if>>
-                                <div class="mdc-line-ripple"></div>
-                                <label for="username" class="mdc-floating-label ${properties.kcLabelClass!}">
+                                <#--  <div class="mdc-line-ripple"></div>  -->
+                                <label for="username" class="mdc-floating-label ${properties.kcLabelClass!}" style="color: #000">
                                     <#if !realm.loginWithEmailAllowed>
                                         ${msg("username")}
                                     <#elseif !realm.registrationEmailAsUsername>
@@ -53,8 +57,8 @@
                             <div class="mdc-text-field mdc-text-field--with-leading-icon ${properties.kcLabelClass!}">
                                 <i class="material-icons mdc-text-field__icon" role="button">lock</i>
                                 <input tabindex="0" required id="password" class="mdc-text-field__input ${properties.kcInputClass!}" name="password" type="password" autocomplete="off">
-                                <div class="mdc-line-ripple"></div>
-                                <label for="password" class="mdc-floating-label ${properties.kcLabelClass!}">${msg("password")}</label>
+                                <#--  <div class="mdc-line-ripple"></div>  -->
+                                <label for="password" class="mdc-floating-label ${properties.kcLabelClass!}" style="color: #000">${msg("password")}</label>
                             </div>
 
                         </div>
@@ -86,7 +90,7 @@
                             <div id="kc-form-options">
                                 <#if realm.rememberMe && !usernameEditDisabled??>
 
-                                    <div class="mdc-form-field">
+                                    <div class="mdc-form-field"  style="color: #F2F2F2">
                                         <div class="mdc-checkbox">
                                             <input tabindex="0"
                                                    id="rememberMe"
@@ -113,7 +117,9 @@
                             </div>
                             <div class="${properties.kcFormOptionsWrapperClass!}">
                                 <#if realm.resetPasswordAllowed>
-                                    <span><a tabindex="0" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
+                                <#--  FORGOT PASSWORD  -->
+                                    <span><a tabindex="0" href="${url.loginResetCredentialsUrl}" style="color: #FDE311; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif">${msg("doForgotPassword")}</a></span>
+
                                 </#if>
                             </div>
                         </div>
@@ -151,8 +157,8 @@
 
             <hr class="mdc-list-divider divider-mdc">
 
-            <div id="kc-registration" class="registration-label-mdc">
-                <span>${msg("noAccount")} <a tabindex="0" href="${url.registrationUrl}">${msg("doRegister")}</a></span>
+            <div id="kc-registration" class="registration-label-mdc" style="color: #F2F2F2; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"">
+                <span>${msg("noAccount")} <a tabindex="0" href="${url.registrationUrl}" style="color: #FDE311">${msg("doRegister")}</a></span>
             </div>
         </#if>
     </#if>

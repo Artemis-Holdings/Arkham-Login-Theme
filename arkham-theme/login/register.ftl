@@ -1,7 +1,14 @@
 <#import "template.ftl" as layout>
+
+<div>
+ <#--  <img src="http://arkhamdevops.eastus.cloudapp.azure.com:3000/static/media/Arkham_Logo_Black.86e5a5dc3890a0b5cc20e9ea0731b948.svg" style="width: 460px" alt="Arkham_Logo">  -->
+ <img src=${msg("logoLocation")} style="width: 460px" alt="Arkham_Logo">
+<br></br>
+</div>
+
 <@layout.registrationLayout; section>
     <#if section = "header">
-        ${msg("registerTitle")}
+        <div style="color: #FDE311">${msg("registerTitle")}</div>
     <#elseif section = "form">
         <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
 
@@ -21,8 +28,8 @@
                 <div class="mdc-text-field mdc-text-field--with-leading-icon ${properties.kcLabelClass!} <#if usernameEditDisabled??>mdc-text-field--disabled</#if>">
                     <i class="material-icons mdc-text-field__icon" role="button">person</i>
                     <input tabindex="0" required id="firstName" class="mdc-text-field__input ${properties.kcInputClass!}" name="firstName" value="${(register.formData.firstName!'')}" type="text" autofocus autocomplete="off">
-                    <div class="mdc-line-ripple"></div>
-                    <label for="firstName" class="mdc-floating-label ${properties.kcLabelClass!}">
+                    <#--  <div class="mdc-line-ripple"></div>  -->
+                    <label for="firstName" class="mdc-floating-label ${properties.kcLabelClass!}" style="color: black">
                         ${msg("firstName")}
                     </label>
                 </div>
@@ -45,8 +52,8 @@
                 <div class="mdc-text-field mdc-text-field--with-leading-icon ${properties.kcLabelClass!}">
                     <i class="material-icons mdc-text-field__icon" role="button">person</i>
                     <input tabindex="0" required id="lastName" class="mdc-text-field__input ${properties.kcInputClass!}" name="lastName" value="${(register.formData.lastName!'')}" type="text" autofocus autocomplete="off">
-                    <div class="mdc-line-ripple"></div>
-                    <label for="lastName" class="mdc-floating-label ${properties.kcLabelClass!}">
+                    <#--  <div class="mdc-line-ripple"></div>  -->
+                    <label for="lastName" class="mdc-floating-label ${properties.kcLabelClass!}" style="color: black">
                         ${msg("lastName")}
                     </label>
                 </div>
@@ -69,8 +76,8 @@
                 <div class="mdc-text-field mdc-text-field--with-leading-icon ${properties.kcLabelClass!}">
                     <i class="material-icons mdc-text-field__icon" role="button">email</i>
                     <input tabindex="0" required id="email" class="mdc-text-field__input ${properties.kcInputClass!}" name="email" value="${(register.formData.email!'')}" type="text" autofocus autocomplete="off">
-                    <div class="mdc-line-ripple"></div>
-                    <label for="email" class="mdc-floating-label ${properties.kcLabelClass!}">
+                    <#--  <div class="mdc-line-ripple"></div>  -->
+                    <label for="email" class="mdc-floating-label ${properties.kcLabelClass!}" style="color: black">
                         ${msg("email")}
                     </label>
                 </div>
@@ -96,8 +103,8 @@
                     <div class="mdc-text-field mdc-text-field--with-leading-icon ${properties.kcLabelClass!}">
                         <i class="material-icons mdc-text-field__icon" role="button">account_box</i>
                         <input tabindex="0" required id="username" class="mdc-text-field__input ${properties.kcInputClass!}" name="username" value="${(register.formData.username!'')}" type="text" autofocus autocomplete="off">
-                        <div class="mdc-line-ripple"></div>
-                        <label for="username" class="mdc-floating-label ${properties.kcLabelClass!}">
+                        <#--  <div class="mdc-line-ripple"></div>  -->
+                        <label for="username" class="mdc-floating-label ${properties.kcLabelClass!}" style="color: black">
                             ${msg("username")}
                         </label>
                     </div>
@@ -133,8 +140,8 @@
                     <div class="mdc-text-field mdc-text-field--with-leading-icon ${properties.kcLabelClass!}">
                         <i class="material-icons mdc-text-field__icon" role="button">lock</i>
                         <input tabindex="0" required id="password" class="mdc-text-field__input ${properties.kcInputClass!}" name="password" type="password" autocomplete="off">
-                        <div class="mdc-line-ripple"></div>
-                        <label for="password" class="mdc-floating-label ${properties.kcLabelClass!}">${msg("password")}</label>
+                        <#--  <div class="mdc-line-ripple"></div>  -->
+                        <label for="password" class="mdc-floating-label ${properties.kcLabelClass!}" style="color: black">${msg("password")}</label>
                     </div>
 
                 </div>
@@ -144,8 +151,8 @@
                     <div class="mdc-text-field mdc-text-field--with-leading-icon ${properties.kcLabelClass!}">
                         <i class="material-icons mdc-text-field__icon" role="button">lock</i>
                         <input tabindex="0" required id="password-confirm" class="mdc-text-field__input ${properties.kcInputClass!}" name="password-confirm" type="password" autocomplete="off">
-                        <div class="mdc-line-ripple"></div>
-                        <label for="password-confirm" class="mdc-floating-label ${properties.kcLabelClass!}">${msg("passwordConfirm")}</label>
+                        <#--  <div class="mdc-line-ripple"></div>  -->
+                        <label for="password-confirm" class="mdc-floating-label ${properties.kcLabelClass!}" style="color: black">${msg("passwordConfirm")}</label>
                     </div>
 
                 </div>
